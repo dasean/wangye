@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        /* 自定义样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #e9ecef;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .header h1 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 3rem;
+        }
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+        .social-links {
+            font-size: 1.5rem;
+        }
+        .social-links a {
+            color: #6c757d;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #007bff;
+        }
+        .social-links small {
+            font-size: 0.6em;
+            vertical-align: super;
+        }
+        /* 聊天界面样式 */
+        #chatbox {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000; /* 确保聊天框在其他元素之上 */
+        }
+        #chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        #chat-input {
+            display: flex;
+            padding: 10px;
+        }
+        #chat-input input {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>我的个人网站</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link" href="#home">首页</a>
+                    <a class="nav-link" href="#about">关于我</a>
+                    <a class="nav-link" href="#portfolio">作品集</a>
+                    <a class="nav-link" href="#contact">联系我</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <section id="home">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" class="d-block w-100" alt="编程场景">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>热爱编程</h5>
+                            <p>大帅在专注编码,创造优秀的软件作品。</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" class="d-block w-100" alt="工作环境">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>舒适的工作空间</h5>
+                            <p>这是大帅日常工作和创作的地方,充满灵感和创意。</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1460925895917-322da13575f3" class="d-block w-100" alt="项目展示">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>最新项目</h5>
+                            <p>展示大帅最近完成的令人兴奋的项目。</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">上一张</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">下一张</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="about" class="mt-4">
+            <h2>关于我</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <p>我是大帅,一名充满激情的全栈开发工程师。我专注于Web开发和人工智能应用,致力于创造直观、高效的用户体验。在过去的5年里,我参与了多个项目,包括大型电商平台的重构和AI驱动的客户服务系统的开发。</p>
+                    <p>我相信技术应该服务于人类,而不是相反。我不断追求在软件开发领域的创新和突破,同时保持对用户需求的敏感。</p>
+                    <p>除了编程,我还热衷于摄影和户外探险。这些爱好不仅丰富了我的生活,也为我的专业工作带来了新的视角和创意灵感。</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/大帅头像.jpg" class="img-fluid" alt="大帅的照片">
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="mt-4">
+            <h2>作品集</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" class="card-img-top" alt="电商平台">
+                        <div class="card-body">
+                            <h5 class="card-title">全球化电商平台</h5>
+                            <p class="card-text">领导开发团队重构大型电商平台,提高了50%的网站性能,支持多语言和跨境交易。</p>
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a" class="card-img-top" alt="AI聊天机器人">
+                        <div class="card-body">
+                            <h5 class="card-title">AI驱动的客户服务系统</h5>
+                            <p class="card-text">设计并实现了基于深度学习的智能客服系统,大幅提升了客户满意度,同时降低了30%的人力成本。</p>
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3" class="card-img-top" alt="移动应用">
+                        <div class="card-body">
+                            <h5 class="card-title">健康追踪移动应用</h5>
+                            <p class="card-text">独立开发了一款集成多种传感器数据的健康监测App,在App Store获得了超过10万次下载。</p>
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mt-4">
+            <h2>联系我</h2>
+            <p>你可以通过以下方式联系我：</p>
+            <div class="social-links">
+                <a href="weixin://dl/chat?88523889" target="_blank" title="微信"><i class="bi bi-wechat"></i></a>
+                <a href="https://v.douyin.com/ikWdufLX/" target="_blank" title="抖音"><i class="bi bi-tiktok"></i></a>
+                <a href="https://weixin.sogou.com/weixin?type=1&query=大帅咨询" target="_blank" title="公众号"><i class="bi bi-wechat"></i> <small>公众号</small></a>
+                <a href="https://github.com/dasean" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">快速链接</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#home" class="text-dark">首页</a></li>
+                        <li><a href="#about" class="text-dark">关于我</a></li>
+                        <li><a href="#portfolio" class="text-dark">作品集</a></li>
+                        <li><a href="#contact" class="text-dark">联系我</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">联系方式</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="mailto:dashuai@example.com" class="text-dark">邮箱</a></li>
+                        <li><a href="#" class="text-dark">电话</a></li>
+                        <li><a href="#" class="text-dark">微信</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 大帅的个人网站 | 保留所有权利
+        </div>
+    </footer>
+
+    <!-- 聊天界面 -->
+    <div id="chatbox">
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+            <input type="text" id="user-input" placeholder="输入您的消息...">
+            <button id="send-btn" class="btn btn-primary">发送</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 聊天功能
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', isUser ? 'user-message' : 'ai-message');
+            messageElement.textContent = message;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // 添加以下函数到您的JavaScript代码中
+        async function callVolcanoAPI(message) {
+            const response = await fetch('https://ark.cn-beijing.volces.com/api/v3/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer YOUR_API_KEY' // 请替换为您的实际API Key
+                },
+                body: JSON.stringify({
+                    model: "YOUR_ENDPOINT_ID", // 请替换为您的实际Endpoint ID
+                    messages: [
+                        {
+                            role: "system",
+                            content: "You are a helpful assistant."
+                        },
+                        {
+                            role: "user",
+                            content: message
+                        }
+                    ],
+                    stream: false
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data.choices[0].message.content;
+        }
+
+        async function callVolcanoAPIWithRetry(message, maxRetries = 3) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    return await callVolcanoAPI(message);
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error;
+                    await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1))); // 等待1秒,2秒,3秒
+                }
+            }
+        }
+
+        // 修改sendBtn的事件监听器
+        sendBtn.addEventListener('click', async () => {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+                try {
+                    const response = await callVolcanoAPIWithRetry(message);
+                    addMessage(response, false);
+                } catch (error) {
+                    console.error('Error:', error);
+                    addMessage('抱歉,我遇到了一些问题。请稍后再试。', false);
+                }
+            }
+        });
+
+        // 修改userInput的事件监听器
+        userInput.addEventListener('keypress', async (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const message = userInput.value.trim();
+                if (message) {
+                    addMessage(message, true);
+                    userInput.value = '';
+                    try {
+                        const response = await callVolcanoAPIWithRetry(message);
+                        addMessage(response, false);
+                    } catch (error) {
+                        console.error('Error:', error);
+                        addMessage('抱歉,我遇到了一些问题。请稍后再试。', false);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
